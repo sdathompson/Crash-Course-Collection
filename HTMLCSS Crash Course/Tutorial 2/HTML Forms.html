@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Forms</title>
+    </head>
+    <body>
+
+        <h1 id="title">HTML Forms</h1>
+        
+        <form>
+            <label for="username">enter username:</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <br><br>
+            <label for="email">enter email:</label>
+            <input type="email" id="email" name="username" placeholder="Your e-mail">
+            <br><br>
+            <label for="password">enter password:</label>
+            <input type="password" id="password" name="password" placeholder="Choose a password">
+            
+            <!--Form options-->
+
+            <p>Select your age:</p>
+
+            <!--Select a single option for field-->
+            <input type="radio" name="age" value="0-25" id="age-option-1">
+            <label for="age-option-1">0-25</label>
+
+            <input type="radio" name="age" value="25-45" id="age-option-2">
+            <label for="age-option-2">25-45</label>
+
+            <input type="radio" name="age" value="45+" id="age-option-3">
+            <label for="age-option-3">45+</label>
+        
+            <br><br>
+            
+            <!-- Drop-down list -->
+
+            <label for="question">Security question:</label>
+            <select name="question" id="question">
+                <option value="q1">What colour are your favourite pair of socks?</option>
+                <option value="q2">If you could be a vegetable, which vegetable would you be?</option>
+                <option value="q3">What is the best every security question?</option>
+                <option value="q4">Which city did you grow up in?</option>
+            </select>
+
+            <br><br>
+
+            <label for="">Security question answer:</label>
+            <input type="text" id="answer" name="answer">
+
+            <br><br>
+
+            <label for="bio">Your bio:</label><br>
+            <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Tell us about yourself.."></textarea>
+
+            <br><br>
+
+            <input type="submit" value="submit the form">
+            
+        </form>
+
+        
+    </body>
+</html>

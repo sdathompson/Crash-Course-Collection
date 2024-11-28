@@ -1,0 +1,49 @@
+/* p.error {
+    color: red;
+}
+
+p.success{
+    color: #4fdfb4;
+}
+
+p.success.feedback{
+    border: 1px dashed #4fdfb4;
+}
+
+#content {
+    background-color: ebebeb;
+    padding: 20px;
+    margin: 2px;
+    border: 4px solid black;
+} */
+
+/* div p {
+    color: rgb(59, 18, 59);
+}
+
+ The asterisk means it looks for those characters in the file 
+a[href*="edu"] {
+    background-color: #ef7878;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a[href*=".com"] {
+    color: white;
+    background-color: red;
+    border: 2px solid blue;
+} */
+
+div {
+    color: lightcoral;
+    border: 1px solid gray;
+    margin: 40px;
+    font-weight: bold;
+}
+
+p {
+    border: inherit;
+    margin: inherit;
+}
