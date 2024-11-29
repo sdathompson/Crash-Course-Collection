@@ -152,7 +152,7 @@ const preHeatOven = () => {
         setTimeout(() => {
             const preHeatOven = true;
 
-            preHeatOven ? resolve("Preheat over to 180deg") : reject("Failed Task")
+            preHeatOven ? resolve("Preheat over to 180deg") : reject("Failed Task One")
         })
     })
 }
@@ -183,4 +183,59 @@ const bakeMixture = () => {
         })
     })
 }
+
+const bakeChocoBrownies = async () => {
+    try{
+        const taskOne = await preHeatOven();
+        console.log(taskOne)
+        const taskTwo = await addSugarandChocoChips();
+        console.log(taskTwo);
+        const taskThree = await addFlourCocoaAndSalt();
+        console.log(taskThree);
+        const taskFour = await bakeMixture();
+        console.log(taskFour);
+    
+        console.log("Enjoy! Your perfect Chocolate Brownies!")
+    } catch(error) {
+        console.log(error)
+    }
+ 
+}
+
+bakeChocoBrownies();
+
+// Fetch API('<URL>', {})
+// To add to the fetch request
+// fetch('https://dummyjson.com/products/1', {
+//     // Post Request instead of a Fetch Request
+//     // methods include POST, PUT, and DELETE
+//     method: 'PUT',
+//     headers: {
+//         'Content-type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//         description: 'Iphone 19',
+        
+//         price: '1000',
+//         rating: '9/10'
+//     })
+// })
+// // Specify these methods for the promise to load the API into the website
+// .then(response => console.log(response))
+// .then(data => console.log(data))
+// .catch(error => console.log(error))
+
+// API Fetch mixed with Async, Try/Catch
+const getAllProducts = async () => {
+    try{
+        const response = await fetch('https://dummyjson.com/products/');
+        const json = await response.json();
+        console.log(json);        
+    } catch (error) {
+        console.log(error);
+    }        
+
+}
+
+getAllProducts(); //output = products Array with 30 objects
 
