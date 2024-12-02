@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Two style sheets to seperate the elements (lots of elements to design) -->
+    <link rel="stylesheet" href="styleOne.css">
+    <link rel="stylesheet" href="styleTwo.css">
+
+    <!-- Font Awesome copy pasta for icons -->
+    <script src="https://kit.fontawesome.com/4084dc0529.js" crossorigin="anonymous"></script>
+    <title>Pokemon API</title>
+</head>
+<body>
+
+    <div id="container">
+        <!-- Left half of pokedex -->
+        <div id="pokedexOne">
+            <!-- Top half -->
+            <div id="top">
+                <!-- Top left rectangle of the Pokedex -->
+                <div id="topSquareOne">
+                    <div id="buttonWhite">
+                        <div id="buttonBlue"></div>
+                    </div>
+
+                    <div id="topSquareTwo">
+                        <div id="buttonRed"></div>
+                        <div id="buttonGreen"></div>
+                        <div id="buttonYellow"></div>
+                    </div>
+                </div>
+                <!-- Pokedex Screen -->
+                <div id="screen">
+                    <div id="buttonRedScreen"></div>
+                    <div id="barOne"></div>
+                    <div id="barTwo"></div>
+                    <div id="screenTwo">
+                        <img src="" id="pokemonImg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Half -->
+             <div id="bottom">
+                <div id="buttonBlueTwo"></div>
+                <div id="buttonYellowTwo"></div>
+                <div id="dPadHorizontal"></div>
+                <div id="dPadVertical"></div>
+                <div id="select"></div>
+                <div id="start"></div>
+             </div>
+        </div>
+
+        <!-- Hinge -->
+        <div id="hinge"></div>
+
+        <!--Second half of pokedex -->
+        <div id="pokedexTwo">
+            <!-- Top Right Hidden Div to match the inset of left -->
+            <div id="topSquare">
+                <div id="hidden"></div>
+            </div>
+            <!-- Search Bar -->
+            <div id="searchBar">
+                <input type="text" id="searchName" placeholder="Enter a Pokemon...">
+                <button onclick="getPokemon()" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <!-- Cyan Button Grid -->
+            <div id="sectionTwo">
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+                <div class="squares"></div>
+            </div>
+            <!-- Two Beige Recentangles and Yellow Button -->
+            <div id="sectionThree">
+               <div id="twoSquares">
+                    <div class="two"></div>
+                    <div class="two"></div>
+               </div>
+               <div id="buttonYellowBtn"></div>
+            </div>
+            <!-- Bottom Two Grey Buttons -->
+            <div id="sectionFour">
+                <div class="bottomTwo"></div>
+                <div class="bottomTwo"></div>
+            </div>
+    </div>
+    
+</body>
+<!-- Script Linked -->
+<script src="pokedex.js"></script>
+</html>
