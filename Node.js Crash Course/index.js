@@ -3,4 +3,7 @@
 
 // console.log(`C to F: ${celsiusToFahrenheit(generateRandomNumber())}.`)
 
-import { getPost } from './postController.js';
+
+// New import syntax
+//Alternative syntax: import getPosts from './postController.js';
+import { getPost, getPostLength } from './postController.js';
