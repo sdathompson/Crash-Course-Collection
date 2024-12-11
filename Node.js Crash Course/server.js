@@ -13,8 +13,6 @@ const __dirname = path.dirname(__filename);
 
 console.log(__filename, __dirname);
 const server = http.createServer(async (req, res) => {
-    // Method to set Header content type to html
-    // Will use HTML tags
     try {
         //To check if it's a GET request
         if (req.method === 'GET') {
@@ -29,8 +27,7 @@ const server = http.createServer(async (req, res) => {
             const data = await fs.readFile(filePath);
             res.setHeader('Content-Type', 'text/html');
             res.write(data);
-            res.end();
-            
+            res.end();            
         } else {
             throw new Error('Method not allowed');
         }
