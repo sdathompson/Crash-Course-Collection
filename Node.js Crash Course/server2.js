@@ -29,13 +29,6 @@ const getUsersHandler = (req, res) => {
     res.end();  
 };
 
-//Route Handler for NOT FOUND
-const getNotFoundHandler = (req, res) => {
-    res.statusCode = 404;
-    res.write(JSON.stringify({message: 'Route not found'}));
-    res.end();
-};
-
 //Route Handler for GET /api/users/[id number]
 const getUserByIdHandler = (req, res) => {
     // Split the request url into an array and grab the 4th elements, which is the ID
@@ -45,19 +38,32 @@ const getUserByIdHandler = (req, res) => {
     if (user) {            
         res.write(JSON.stringify(user));   
     } else {            
-        getNotFoundHandler();
+        res.statusCode = 404;
+        res.write(JSON.stringify({message: 'User not found'}));
     }
+    res.end();
 };
+
+//Route Handler for NOT FOUND
+const getNotFoundHandler = (req, res) => {
+    res.statusCode = 404;
+    res.write(JSON.stringify({message: 'Route not found'}));
+    res.end();
+};
+
  
 const server = createServer((req, res) => {
     logger(req, res, () => {
-        jsonMiddleware ((req, res) => {
+        jsonMiddleware (req, res, () => {
             if (req.url === '/api/users' && req.method === 'GET') {
                 getUsersHandler(req, res);
-            } else if (req.url.match(/\/api\/users\/[0-9]+)/) && req.method === 'GET') {
+            } else if (
+                req.url.match(/\/api\/users\/[0-9]+/) && 
+                req.method === 'GET'
+            ) {
                 getUserByIdHandler(req, res);
             } else {
-                getNotFoundHandler(req, res)
+                getNotFoundHandler(req, res);
             }
         });
     });
