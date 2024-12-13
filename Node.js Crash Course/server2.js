@@ -44,6 +44,29 @@ const getUserByIdHandler = (req, res) => {
     res.end();
 };
 
+// Route Handler for POST /api/users
+const createUserHandler = (req, res) => {
+    let body = '';
+    // Listen for data
+    // on method requires a data input and 
+    // a callback function with the chunk attribute
+    //both of them should be strings
+    req.on('data', (chunk) =>{
+        body += chunk.toString();
+    });
+    // on method again requires strings. Parse converts JSON into an object
+    // The object can then be added to an array.
+    req.on('end', () => {
+        const newUser = JSON.parse(body);
+        users.push(newUser);
+
+        // 201 = post was successful and something was created
+        res.statusCode = 201;
+        res.write(JSON.stringify(newUser));
+        res.end();
+    })
+}
+
 //Route Handler for NOT FOUND
 const getNotFoundHandler = (req, res) => {
     res.statusCode = 404;
