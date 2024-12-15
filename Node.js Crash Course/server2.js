@@ -55,9 +55,9 @@ const createUserHandler = (req, res) => {
         body += chunk.toString();
     });
     // on method again requires strings. Parse converts JSON into an object
-    // The object can then be added to an array.
     req.on('end', () => {
         const newUser = JSON.parse(body);
+        // The object can then be added to an array.
         users.push(newUser);
 
         // 201 = post was successful and something was created
@@ -85,6 +85,8 @@ const server = createServer((req, res) => {
                 req.method === 'GET'
             ) {
                 getUserByIdHandler(req, res);
+            } else if (req.url === '/api/users' && req.method === 'POST') {
+                createUserHandler(req, res);
             } else {
                 getNotFoundHandler(req, res);
             }
