@@ -27,4 +27,29 @@ const readFile = async () => {
     }
 };
 
+// writeFile () writes to a file; creates one if it doesn't exist
+
+const writeFile = async () => {
+    try {
+        let writeFileTest = 'Hello, I am writing to this file';
+        await fs.writeFile('./test.txt', writeFileTest);
+        console.log('File written to...');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const appendFile = async () => {
+    try {
+        // \n is a new line character
+        await fs.appendFile('./test.txt', '\n This is appended to the file.-5');
+        console.log('File appended to...');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+writeFile();
+appendFile();
 readFile();

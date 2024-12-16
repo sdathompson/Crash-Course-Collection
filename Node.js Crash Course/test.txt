@@ -1,1 +1,2 @@
-Text file is being read.
+Hello, I am writing to this file
+ This is appended to the file.
