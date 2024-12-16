@@ -1,0 +1,12 @@
+//Syntax to initialize express in a file
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => { 
+    // Don't have to define the content type
+    res.send('Hello World');
+    res.end();
+});
+
+app.listen(8000, () => console.log(`Server is running on port 8000`));
