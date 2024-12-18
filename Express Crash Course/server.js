@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => { 
-    // Don't have to define the content type
-    res.send('Hello World');
+    // Don't have to define the content type. Automatically update to the desired content
+    res.send({message: 'Hello World'});
     res.end();
 });
 
