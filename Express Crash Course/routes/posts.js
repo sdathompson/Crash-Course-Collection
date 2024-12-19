@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 //Pseudo Database
@@ -32,10 +32,50 @@ router.get('/:id', (req, res) => {
 
     if (!post) {
         return res.status(404).json({msg: `A post with the id of ${id} was not found.`});
-    }         
+    }      
     
     res.status(200).json(post);
     
 });
 
-module.exports = router;
+// Create new post
+router.post('/', (req, res) => {
+    // Create an object to be pushed onto the array
+    const newPost = {
+        id: posts.length + 1,
+        title: req.body.title
+    };
+
+    // Null case
+    if (!newPost.title) {
+        return res.status(400).json({ msg: 'Please include a title'});
+    }
+
+    // 
+    posts.push(newPost);
+    res.status(201).json(posts);
+});
+
+//Update post
+router.put('/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const post = posts.find((post) => post.id === id);
+
+    if (!post) {
+        return res
+        .status(404)
+        .json({ msg: `A post with the id of ${id} was not found`});
+    }
+    post.title = req.body.title;
+    res.status(200).json(posts);
+    
+
+});
+
+//Delete Post
+router.delete('/:id', (req,res) => {
+    const id = parseInt(req.params.id);
+    const post = posts.find((post) => posts.id === id);
+});
+
+export default router;

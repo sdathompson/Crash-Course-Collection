@@ -1,9 +1,17 @@
 //Syntax to initialize express in a file
 import express from 'express';
 import path from 'path';
+import posts from './routes/posts.js';
 const port = process.env.PORT || 8000;
-const posts = require('./routes/posts');
+
 const app = express();
+
+//Body parser middleware
+//To parse raw JSON data
+app.use(express.json());
+
+//To parse URL encoded data
+app.use(express.urlencoded({ extended: false }));
 
 // setup static folder (public)
 // Middleware is a function that runs between the incoming request 
