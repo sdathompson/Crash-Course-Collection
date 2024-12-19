@@ -11,12 +11,12 @@ let posts = [
 
 //Res.json passes a JS array of objects
 // Get all posts
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
     console.log(req.query);
     const limit = parseInt(req.query);    
 // If a limit that is a number is given, it will show all posts up to the limit
 // else it will return all posts
-    if (!isNaN(limit) && limit > 0) {
+    if (!isNaN(limit) && limit > 0) {        
         return res.status(200).json(posts.slice(0, limit));        
     }
 
@@ -33,6 +33,7 @@ router.get('/:id', (req, res, next) => {
 
     if (!post) {
         const error = new Error(`A post with the id of ${id} was not found`);
+        error.status = 404;
         return next(error);
     }      
     
@@ -41,7 +42,7 @@ router.get('/:id', (req, res, next) => {
 });
 
 // Create new post
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
     // Create an object to be pushed onto the array
     const newPost = {
         id: posts.length + 1,
@@ -50,7 +51,10 @@ router.post('/', (req, res) => {
 
     // Null case
     if (!newPost.title) {
-        return res.status(400).json({ msg: 'Please include a title'});
+        const error = new Error ('Please include a title');
+        error.status = 400;
+        return next(error);
+        
     }
 
     // 
@@ -59,14 +63,14 @@ router.post('/', (req, res) => {
 });
 
 //Update post
-router.put('/:id', (req, res) => {
+router.put('/:id', (req, res, next) => {
     const id = parseInt(req.params.id);
     const post = posts.find((post) => post.id === id);
 
     if (!post) {
-        return res
-        .status(404)
-        .json({ msg: `A post with the id of ${id} was not found`});
+        const error = new Error (`A post with the id of ${id} was not found`);
+        error.status = 404;
+        return next(error);
     }
     post.title = req.body.title;
     res.status(200).json(posts);
@@ -75,14 +79,15 @@ router.put('/:id', (req, res) => {
 });
 
 //Delete Post
-router.delete('/:id', (req,res) => {
+router.delete('/:id', (req, res, next) => {
     const id = parseInt(req.params.id);
     const post = posts.find((post) => post.id === id);
     
     if (!post) {
-        return res
-        .status(404)
-        .json({ msg: `A post with the id of ${id} was not found`});
+        const error = new Error(`A post with the id of ${id} was not found`);
+        error.status = 404;
+        return next(error);
+
     }
 
     //Return all the posts except for the one with this ID
