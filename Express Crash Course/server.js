@@ -2,6 +2,8 @@
 import express from 'express';
 import path from 'path';
 import posts from './routes/posts.js';
+import logger from './middleware/logger.js';
+import error from './middleware/error.js';
 const port = process.env.PORT || 8000;
 
 const app = express();
@@ -12,6 +14,12 @@ app.use(express.json());
 
 //To parse URL encoded data
 app.use(express.urlencoded({ extended: false }));
+
+//Logger middleware
+app.use(logger);
+
+//Error handler
+app.use(errorHandler);
 
 // setup static folder (public)
 // Middleware is a function that runs between the incoming request 

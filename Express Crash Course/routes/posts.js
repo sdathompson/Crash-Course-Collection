@@ -8,6 +8,7 @@ let posts = [
     {id: 3, title: "Post Three"}
 ];
 
+
 //Res.json passes a JS array of objects
 // Get all posts
 router.get('/', (req, res) => {
@@ -24,14 +25,15 @@ router.get('/', (req, res) => {
 });
 
 // Get a single post (for dynamic branches use '/:attribute' syntax)
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
     //parseInt to go from a string to a number
     const id = parseInt(req.params.id);
     //filter the current ID into the URL
     const post = posts.find((post) => post.id === id);
 
     if (!post) {
-        return res.status(404).json({msg: `A post with the id of ${id} was not found.`});
+        const error = new Error(`A post with the id of ${id} was not found`);
+        return next(error);
     }      
     
     res.status(200).json(post);
