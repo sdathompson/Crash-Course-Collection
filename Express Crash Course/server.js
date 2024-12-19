@@ -18,9 +18,17 @@ let posts = [
 ];
 
 //Res.json passes a JS array of objects
-// Get all post
+// Get all posts
 app.get('/api/posts', (req, res) => {
-    res.json(posts);
+    console.log(req.query);
+    const limit = parseInt(req.query);    
+// If a limit that is a number is given, it will show all posts up to the limit
+// else it will return all posts
+    if (!isNaN(limit) && limit > 0) {
+        res.status(200).json(posts.slice(0, limit));        
+    } else {
+        res.status(200).json(posts);
+    }
 });
 
 // Get a single post (for dynamic branches use '/:attribute' syntax)
@@ -28,14 +36,13 @@ app.get('/api/posts/:id', (req, res) => {
     //parseInt to go from a string to a number
     const id = parseInt(req.params.id);
     //filter the current ID into the URL
-    res.json(posts.filter((post) => post.id === id));
-});
-// For titles
-app.get('/api/posts/:title', (req, res) => {
-    //parseInt to go from a string to a number
-    console.log(req.params.title);
-    //filter the current ID into the URL
-    res.json(posts.filter((post) => post.title === title));
+    const post = posts.find((post) => post.id === id);
+
+    if (!post) {
+        res.status(404).json({msg: `A post with the id of ${id} was not found.`});
+    } else {
+        res.status(200).json(post);
+    }
 });
 
 // app.get('/', (req, res) => { 
