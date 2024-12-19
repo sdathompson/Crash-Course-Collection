@@ -10,7 +10,7 @@ let posts = [
 
 //Res.json passes a JS array of objects
 // Get all posts
-app.get('/api/posts', (req, res) => {
+router.get('/', (req, res) => {
     console.log(req.query);
     const limit = parseInt(req.query);    
 // If a limit that is a number is given, it will show all posts up to the limit
@@ -24,7 +24,7 @@ app.get('/api/posts', (req, res) => {
 });
 
 // Get a single post (for dynamic branches use '/:attribute' syntax)
-app.get('/api/posts/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     //parseInt to go from a string to a number
     const id = parseInt(req.params.id);
     //filter the current ID into the URL
@@ -37,3 +37,5 @@ app.get('/api/posts/:id', (req, res) => {
     res.status(200).json(post);
     
 });
+
+module.exports = router;
