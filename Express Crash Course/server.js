@@ -1,11 +1,16 @@
 //Syntax to initialize express in a file
 import express from 'express';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import posts from './routes/posts.js';
 import logger from './middleware/logger.js';
 import errorHandler from './middleware/error.js';
 import masterErrorHandler from './middleware/notFound.js';
 const port = process.env.PORT || 8000;
+
+// Get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
@@ -24,7 +29,7 @@ app.use(logger);
 // Middleware is a function that runs between the incoming request 
 //and the outgoing response.
 // This static middleware finds the path of the folder and 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //Routes
 //In the .use setup the file directory and delete it from the route file

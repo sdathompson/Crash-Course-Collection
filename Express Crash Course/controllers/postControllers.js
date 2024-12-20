@@ -1,5 +1,3 @@
-// Get all posts
-// route GET /api/posts
 
 let posts = [
     {id: 1, title: "Post One"},
@@ -7,6 +5,8 @@ let posts = [
     {id: 3, title: "Post Three"}
 ];
 
+// Get all posts
+// route GET /api/posts
 
 export const getPosts = (req, res, next) => {
     console.log(req.query);
