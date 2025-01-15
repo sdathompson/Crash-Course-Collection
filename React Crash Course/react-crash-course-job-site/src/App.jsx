@@ -13,26 +13,48 @@ import NotFoundPage from './pages/NotFoundPage';
 import AddJobPage from './pages/AddJobPage';
 
 const App = () => {
-  const addJob = (newJob) => {
-    console.log(newJob)
-  }
-  
-  const router = createBrowserRouter(
-    // Create a router with a path from an element
-    createRoutesFromElements(
-      <Route path='/' element = {< MainLayout/>}>
-        <Route index element={<HomePage />} />
-        <Route path='/jobs' element={<JobsPage />} />
-        <Route path='/jobs/:id' element={<JobPage />} loader={ jobLoader } />
-        <Route path='/add-job' element={<AddJobPage addJobSubmit={ addJob }/>} />
-        <Route path='*' element={<NotFoundPage />} />
-  
-      </Route>
-    )
-  );
+  // Add New Job
+  const addJob = async(newJob) => {
+    try {      
+      const res = await fetch('/api/jobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newJob),
+      });
+    } catch (error) {      
+      console.log('Error fetching New Job', error);
+    }
+    return;
+  };
 
-  return <RouterProvider router={router} />
-};
+  //Delete New Job
+  const deleteJob = async(id) => {
+    const res = await fetch(`/api/jobs/${id}`, {
+      method: 'DELETE',
+    });
+    return;
+  }
+
+  const router = createBrowserRouter(
+      // Create a router with a path from an element
+      createRoutesFromElements(
+        <Route path='/' element = {< MainLayout/>}>
+          <Route index element={<HomePage />} />
+          <Route path='/jobs' element={<JobsPage />} />
+          <Route path='/jobs/:id' element={<JobPage deleteJob= {deleteJob} />} loader={ jobLoader } />
+          <Route path='/add-job' element={<AddJobPage addJobSubmit={ addJob }/>} />
+          <Route path='*' element={<NotFoundPage />} />
+    
+        </Route>
+      )
+    );
+  
+    return <RouterProvider router={router} />
+  
+  };
+  
 
 export default App
 
