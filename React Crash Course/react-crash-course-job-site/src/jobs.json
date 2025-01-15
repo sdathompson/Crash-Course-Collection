@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "a670",
+      "title": "Update Test",
+      "type": "Part-Time",
+      "location": "gvjbseiogjw",
+      "description": "gjesiobjeij",
+      "salary": "Under $50K",
+      "company": {
+        "name": "gjsiobj",
+        "description": "gsejboisjbsoij",
+        "contactEmail": "test@test.com",
+        "contactPhone": "gjeisobjs"
+      }
     }
   ]
 }
