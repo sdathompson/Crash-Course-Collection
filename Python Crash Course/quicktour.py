@@ -65,3 +65,16 @@ pi = 3.14
 result = round(pi) #output = 3
 
 result = pow(friends, result) #output = 1^3 = 1
+
+# Conditional Statements - IF
+
+age = int(input('Enter your age: '))
+
+if age >= 18:
+    print('What kind of credit card would you like to apply for?')
+elif age < 0:
+    print('Invalid age')
+else:
+    print('Not old enough to apply for a credit card')
+
+
