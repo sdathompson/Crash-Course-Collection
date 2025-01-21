@@ -1,10 +1,10 @@
-#Madlibs game
-#word game where you create a story by filling in the blanks
+# Madlibs game
+# word game where you create a story by filling in the blanks
 
 adjective1 = input('Enter an adjective(description): ')
 noun1 = input('Enter a noun(an object): ')
 adjective2 = input('Enter an adjective(description): ')
-verb1 = input('Enter a verb(action): ')
+verb1 = input('Enter a verb ending in ing(action): ')
 adjective3 = input('Enter an adjective(description): ')
 
 print(f'Today I went to a {adjective1} zoo.')
