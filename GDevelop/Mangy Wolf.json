@@ -198,7 +198,7 @@
       "title": "",
       "v": 255,
       "uiSettings": {
-        "grid": false,
+        "grid": true,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -206,8 +206,8 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": false,
-        "zoomFactor": 0.20220707303602023,
+        "snap": true,
+        "zoomFactor": 0.4194339782759095,
         "windowMask": false
       },
       "objectsGroups": [
@@ -219,6 +219,9 @@
             },
             {
               "name": "Platformer_Character"
+            },
+            {
+              "name": "Spike"
             }
           ]
         }
@@ -268,8 +271,8 @@
           "name": "Joystick",
           "persistentUuid": "855d809a-f954-4072-86d5-1d6f0b24a066",
           "width": 0,
-          "x": 176,
-          "y": 576,
+          "x": 80,
+          "y": 624,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -422,6 +425,40 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Spike",
+          "persistentUuid": "c0cc924c-91a6-4912-8727-3526162d96af",
+          "width": 112,
+          "x": 352,
+          "y": 480,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 64,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Spike",
+          "persistentUuid": "c219b705-1d61-4cec-94bb-bf3219cdd769",
+          "width": 112,
+          "x": 672,
+          "y": 480,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -517,7 +554,7 @@
           ],
           "animations": [
             {
-              "name": "",
+              "name": "Platformer_Character",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -588,7 +625,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "",
+              "name": "Coins",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -840,7 +877,6 @@
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Spike",
-          "persistentUuid": "fc3d907b-3271-4c23-b6d3-d45008273b24",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -848,7 +884,7 @@
           "behaviors": [],
           "animations": [
             {
-              "name": "",
+              "name": "Spike",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -989,7 +1025,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Camera",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1078,7 +1113,7 @@
                   "parameters": [
                     "",
                     "=",
-                    "lerp(CameraX(),Platformer_Character.X(), 0.05)",
+                    "lerp(CameraX(),Platformer_Character.X(), 0.05 * TimeDelta())",
                     "",
                     ""
                   ]
@@ -1090,7 +1125,7 @@
                   "parameters": [
                     "",
                     "=",
-                    "lerp(CameraY(),Platformer_Character.Y(), 0.05)",
+                    "lerp(CameraY(),Platformer_Character.Y(), 0.05 * TimeDelta())",
                     "",
                     ""
                   ]
@@ -1175,6 +1210,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Object Collision",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1196,12 +1232,13 @@
               "conditions": [
                 {
                   "type": {
-                    "value": "Distance"
+                    "value": "CollisionNP"
                   },
                   "parameters": [
                     "Platformer_Character",
-                    "Coins",
-                    "1",
+                    "Objects",
+                    "",
+                    "",
                     ""
                   ]
                 }
@@ -1209,9 +1246,46 @@
               "actions": [],
               "events": [
                 {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Spikes\n"
+                },
+                {
                   "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [],
-                  "actions": []
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Objects",
+                        "Animation",
+                        "=",
+                        "\"Spike\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "CameraShake::ShakeCamera"
+                      },
+                      "parameters": [
+                        "",
+                        "0.1",
+                        "0.05",
+                        "0.05",
+                        ""
+                      ]
+                    }
+                  ]
                 }
               ]
             }
