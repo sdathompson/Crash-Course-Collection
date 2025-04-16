@@ -37,4 +37,17 @@ get_user_name()
 #todo: Lost in a Maze
     # Follow along the right edge of the maze,
     # turning right if it can, going straight ahead if it can't turn right,
-    # and turning left as a last resort
+    # and turning left as a last
+        # def mazemovement():
+        #     while front_is_clear():
+        #        move()
+        #     turn_left()
+        #     while not at_goal():
+        #         if right_is_clear():
+        #             turn_right()
+        #             move()
+        #         elif front_is_clear():
+        #             move()
+        #         else:
+        #             turn_left()
+        # mazemovement()
