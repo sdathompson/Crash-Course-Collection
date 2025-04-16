@@ -15,5 +15,11 @@ files:
   - name: solution.py
     visible: true
     learner_created: false
-status: Unchecked
+  - name: testing_copy.py
+    visible: true
+    learner_created: true
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Wed, 16 Apr 2025 02:13:29 UTC"
 record: -1
