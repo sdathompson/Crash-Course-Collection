@@ -176,6 +176,30 @@
         "name": "assets\\Spikes.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Base Frame.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Base Frame.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Hurt_1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Hurt_1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Hurt_2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Hurt_2.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -463,9 +487,10 @@
       ],
       "objects": [
         {
-          "adaptCollisionMaskAutomatically": false,
+          "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Platformer_Character",
+          "persistentUuid": "9a9bf345-9a39-46e8-a1e9-cde2f5af25a4",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -554,7 +579,7 @@
           ],
           "animations": [
             {
-              "name": "Platformer_Character",
+              "name": "Base Frame",
               "useMultipleDirections": false,
               "directions": [
                 {
@@ -563,7 +588,7 @@
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
-                      "image": "assets\\StartingPlayer.png",
+                      "image": "assets\\Base Frame.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -580,19 +605,103 @@
                         [
                           {
                             "x": 0,
-                            "y": 2
+                            "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 2
+                            "x": 34,
+                            "y": 0
                           },
                           {
-                            "x": 64,
-                            "y": 64
+                            "x": 34,
+                            "y": 32
                           },
                           {
                             "x": 0,
-                            "y": 64
+                            "y": 32
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Hurt_Spike",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.5,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\Hurt_1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 32
+                          },
+                          {
+                            "x": 0,
+                            "y": 32
+                          }
+                        ]
+                      ]
+                    },
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "assets\\Hurt_2.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 0
+                          },
+                          {
+                            "x": 34,
+                            "y": 32
+                          },
+                          {
+                            "x": 0,
+                            "y": 32
                           }
                         ]
                       ]
@@ -971,13 +1080,11 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Character",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "folded": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1016,6 +1123,11 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             }
           ],
           "parameters": []
@@ -1210,7 +1322,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Object Collision",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1279,10 +1390,59 @@
                       },
                       "parameters": [
                         "",
-                        "0.1",
-                        "0.05",
-                        "0.05",
+                        "0.01",
+                        "0.001",
+                        "0.001",
                         ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Platformer_Character",
+                        "Animation",
+                        "=",
+                        "\"Hurt_Spike\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                      },
+                      "parameters": [
+                        "Platformer_Character",
+                        "Animation",
+                        "=",
+                        "\"Hurt_Spike\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::HasAnimationEnded"
+                      },
+                      "parameters": [
+                        "Platformer_Character",
+                        "Animation"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Platformer_Character",
+                        "Animation",
+                        "=",
+                        "\"Base Frame\""
                       ]
                     }
                   ]
