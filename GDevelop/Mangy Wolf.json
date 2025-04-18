@@ -16,11 +16,11 @@
     "pixelsRounding": false,
     "projectUuid": "bd6bf6d9-0fcd-442d-9728-f9b29be9a00b",
     "scaleMode": "linear",
-    "sizeOnStartupMode": "",
+    "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "starting-platformer",
     "version": "1.0.0",
     "name": "Mangy Wolf",
-    "description": "",
+    "description": "Test game to figure out the engine",
     "author": "",
     "windowWidth": 1280,
     "windowHeight": 720,
@@ -222,7 +222,7 @@
       "title": "",
       "v": 255,
       "uiSettings": {
-        "grid": true,
+        "grid": false,
         "gridType": "rectangular",
         "gridWidth": 32,
         "gridHeight": 32,
@@ -230,8 +230,8 @@
         "gridOffsetY": 0,
         "gridColor": 10401023,
         "gridAlpha": 0.8,
-        "snap": true,
-        "zoomFactor": 0.4194339782759095,
+        "snap": false,
+        "zoomFactor": 0.3111974942445241,
         "windowMask": false
       },
       "objectsGroups": [
@@ -248,6 +248,17 @@
               "name": "Spike"
             }
           ]
+        },
+        {
+          "name": "Mobile_Controls",
+          "objects": [
+            {
+              "name": "JumpButton"
+            },
+            {
+              "name": "Joystick"
+            }
+          ]
         }
       ],
       "variables": [],
@@ -255,15 +266,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 1.1241830065359473,
-          "height": 86.00000000000003,
+          "depth": 1,
+          "height": 15,
           "keepRatio": true,
           "layer": "",
           "name": "Platformer_Character",
           "persistentUuid": "4ded1d81-e820-41d3-868a-3f314e5850bd",
-          "width": 86,
-          "x": 138,
-          "y": 256,
+          "width": 15,
+          "x": 77,
+          "y": 29,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -295,8 +306,8 @@
           "name": "Joystick",
           "persistentUuid": "855d809a-f954-4072-86d5-1d6f0b24a066",
           "width": 0,
-          "x": 80,
-          "y": 624,
+          "x": 118,
+          "y": 616,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -312,8 +323,8 @@
           "name": "JumpButton",
           "persistentUuid": "b1d437ce-f3b4-4799-875e-bb51f731cef0",
           "width": 120,
-          "x": 1104,
-          "y": 576,
+          "x": 1106,
+          "y": 619,
           "zOrder": 3,
           "numberProperties": [],
           "stringProperties": [],
@@ -323,14 +334,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 64,
+          "height": 11,
           "keepRatio": true,
           "layer": "",
           "name": "Platform_Ground",
           "persistentUuid": "1c4f7ab9-04d4-4cee-8572-96199ce1245c",
-          "width": 864,
+          "width": 150,
           "x": 64,
-          "y": 544,
+          "y": 79,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -340,14 +351,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 64,
+          "height": 11,
           "keepRatio": true,
           "layer": "",
           "name": "Platform_Ground",
           "persistentUuid": "672ee5c6-d2bb-4ae4-bc77-78d15064dd68",
-          "width": 288,
-          "x": 928,
-          "y": 416,
+          "width": 50,
+          "x": 214,
+          "y": 57,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -357,14 +368,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 1,
-          "height": 64,
+          "height": 11,
           "keepRatio": true,
           "layer": "",
           "name": "Platform_Ground",
           "persistentUuid": "e595746c-dfaa-4c91-a246-d36934b5a906",
-          "width": 288,
+          "width": 50,
           "x": 64,
-          "y": 352,
+          "y": 46,
           "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
@@ -372,15 +383,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 6,
           "keepRatio": true,
           "layer": "",
           "name": "Coins",
           "persistentUuid": "4c79f19c-996c-40e5-a8fb-fcaa13753abd",
-          "width": 0,
-          "x": 1152,
-          "y": 352,
+          "width": 6,
+          "x": 253,
+          "y": 46,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -388,15 +400,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 6,
           "keepRatio": true,
           "layer": "",
           "name": "Coins",
           "persistentUuid": "ad149014-b1f1-44bd-8a58-27b4aa2a7d41",
-          "width": 0,
-          "x": 960,
-          "y": 352,
+          "width": 6,
+          "x": 220,
+          "y": 46,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -404,15 +417,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 6,
           "keepRatio": true,
           "layer": "",
           "name": "Coins",
           "persistentUuid": "4d3402ec-1550-4679-a363-6c1361c0fe53",
-          "width": 0,
-          "x": 1024,
-          "y": 352,
+          "width": 6,
+          "x": 231,
+          "y": 46,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -420,15 +434,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 6,
           "keepRatio": true,
           "layer": "",
           "name": "Coins",
           "persistentUuid": "e6622e84-477f-4c15-95ff-82ba580b8e3d",
-          "width": 0,
-          "x": 1088,
-          "y": 352,
+          "width": 6,
+          "x": 242,
+          "y": 46,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
@@ -453,15 +468,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 0,
-          "height": 64,
+          "depth": 1,
+          "height": 11,
           "keepRatio": true,
           "layer": "",
           "name": "Spike",
           "persistentUuid": "c0cc924c-91a6-4912-8727-3526162d96af",
-          "width": 112,
-          "x": 352,
-          "y": 480,
+          "width": 19,
+          "x": 114,
+          "y": 68,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -470,15 +485,15 @@
         {
           "angle": 0,
           "customSize": true,
-          "depth": 0,
-          "height": 64,
+          "depth": 1,
+          "height": 11,
           "keepRatio": true,
           "layer": "",
           "name": "Spike",
           "persistentUuid": "c219b705-1d61-4cec-94bb-bf3219cdd769",
-          "width": 112,
-          "x": 672,
-          "y": 480,
+          "width": 19,
+          "x": 170,
+          "y": 68,
           "zOrder": 8,
           "numberProperties": [],
           "stringProperties": [],
@@ -490,7 +505,6 @@
           "adaptCollisionMaskAutomatically": true,
           "assetStoreId": "",
           "name": "Platformer_Character",
-          "persistentUuid": "9a9bf345-9a39-46e8-a1e9-cde2f5af25a4",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -505,21 +519,21 @@
               "JumpButton": "A"
             },
             {
-              "name": "PlatformerObject",
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
-              "acceleration": 1000,
+              "acceleration": 150,
               "canGoDownFromJumpthru": true,
+              "deceleration": 200,
+              "gravity": 105,
+              "jumpSpeed": 100,
+              "jumpSustainTime": 0.5,
+              "maxFallingSpeed": 150,
+              "maxSpeed": 70,
+              "name": "PlatformerObject",
+              "slopeMaxAngle": 10,
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "canGrabPlatforms": false,
               "canGrabWithoutMoving": false,
-              "deceleration": 1500,
-              "gravity": 1050,
               "ignoreDefaultControls": false,
-              "jumpSpeed": 717,
-              "jumpSustainTime": 0.3,
               "ladderClimbingSpeed": 200,
-              "maxFallingSpeed": 800,
-              "maxSpeed": 400,
-              "slopeMaxAngle": 60,
               "useLegacyTrajectory": false,
               "xGrabTolerance": 10,
               "yGrabOffset": 0
@@ -631,7 +645,7 @@
               "useMultipleDirections": false,
               "directions": [
                 {
-                  "looping": false,
+                  "looping": true,
                   "timeBetweenFrames": 0.5,
                   "sprites": [
                     {
@@ -792,6 +806,16 @@
           "variables": [],
           "effects": [],
           "behaviors": [
+            {
+              "bottomEdgeAnchor": 0,
+              "leftEdgeAnchor": 2,
+              "name": "Anchor",
+              "relativeToOriginalWindowSize": true,
+              "rightEdgeAnchor": 0,
+              "topEdgeAnchor": 0,
+              "type": "AnchorBehavior::AnchorBehavior",
+              "useLegacyBottomAndRightAnchors": false
+            },
             {
               "name": "ButtonFSM",
               "type": "ButtonStates::ButtonFSM",
@@ -1076,10 +1100,89 @@
       },
       "events": [
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Tracking touches not the virtual cursor"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "TouchSimulateMouse"
+              },
+              "parameters": [
+                "",
+                "no"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Delete mobile controls if you're on desktop"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Mobile_Controls",
+                ""
+              ]
+            }
+          ]
+        },
+        {
           "colorB": 228,
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Character",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1118,7 +1221,7 @@
                     "",
                     "PickupCoin",
                     "",
-                    "80",
+                    "10",
                     "RandomFloatInRange(1,1.1)"
                   ]
                 }
@@ -1137,6 +1240,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Camera",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1172,7 +1276,7 @@
                   },
                   "parameters": [
                     "",
-                    "1",
+                    "5",
                     "",
                     "0"
                   ]
@@ -1322,6 +1426,7 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
+          "folded": true,
           "name": "Object Collision",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1391,8 +1496,8 @@
                       "parameters": [
                         "",
                         "0.01",
-                        "0.001",
-                        "0.001",
+                        "0.01",
+                        "0.01",
                         ""
                       ]
                     },
@@ -1464,7 +1569,7 @@
           "cameraType": "",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
-          "isLocked": false,
+          "isLocked": true,
           "name": "Background",
           "renderingType": "",
           "visibility": true,
@@ -1518,6 +1623,10 @@
         }
       ],
       "behaviorsSharedData": [
+        {
+          "name": "Anchor",
+          "type": "AnchorBehavior::AnchorBehavior"
+        },
         {
           "name": "Animation",
           "type": "AnimatableCapability::AnimatableBehavior"
