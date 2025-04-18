@@ -511,6 +511,7 @@
           "effects": [],
           "behaviors": [
             {
+              "isFolded": true,
               "name": "PlatformerMultitouchMapper",
               "type": "SpriteMultitouchJoystick::PlatformerMultitouchMapper",
               "Property": "PlatformerObject",
@@ -519,6 +520,9 @@
               "JumpButton": "A"
             },
             {
+              "isFolded": true,
+              "name": "PlatformerObject",
+              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "acceleration": 150,
               "canGoDownFromJumpthru": true,
               "deceleration": 200,
@@ -527,9 +531,7 @@
               "jumpSustainTime": 0.5,
               "maxFallingSpeed": 150,
               "maxSpeed": 70,
-              "name": "PlatformerObject",
               "slopeMaxAngle": 10,
-              "type": "PlatformBehavior::PlatformerObjectBehavior",
               "canGrabPlatforms": false,
               "canGrabWithoutMoving": false,
               "ignoreDefaultControls": false,
@@ -539,6 +541,7 @@
               "yGrabOffset": 0
             },
             {
+              "isFolded": true,
               "name": "SmoothCamera",
               "type": "SmoothCamera::SmoothCamera",
               "LeftwardSpeed": 0.9,
@@ -646,7 +649,7 @@
               "directions": [
                 {
                   "looping": true,
-                  "timeBetweenFrames": 0.5,
+                  "timeBetweenFrames": 2,
                   "sprites": [
                     {
                       "hasCustomCollisionMask": true,
@@ -807,13 +810,13 @@
           "effects": [],
           "behaviors": [
             {
+              "name": "Anchor",
+              "type": "AnchorBehavior::AnchorBehavior",
               "bottomEdgeAnchor": 0,
               "leftEdgeAnchor": 2,
-              "name": "Anchor",
               "relativeToOriginalWindowSize": true,
               "rightEdgeAnchor": 0,
               "topEdgeAnchor": 0,
-              "type": "AnchorBehavior::AnchorBehavior",
               "useLegacyBottomAndRightAnchors": false
             },
             {
@@ -1426,7 +1429,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Object Collision",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -1478,13 +1480,14 @@
                   "conditions": [
                     {
                       "type": {
-                        "value": "AnimatableCapability::AnimatableBehavior::Name"
+                        "value": "CollisionNP"
                       },
                       "parameters": [
-                        "Objects",
-                        "Animation",
-                        "=",
-                        "\"Spike\""
+                        "Spike",
+                        "Platformer_Character",
+                        "",
+                        "",
+                        ""
                       ]
                     }
                   ],
@@ -1654,6 +1657,15 @@
         {
           "name": "Opacity",
           "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "gravityX": 0,
+          "gravityY": 9.8,
+          "worldScale": 100,
+          "scaleX": 100,
+          "scaleY": 100
         },
         {
           "name": "Platform",
