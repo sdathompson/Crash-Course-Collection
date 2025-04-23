@@ -2,6 +2,7 @@ MENU = {
     "espresso": {
         "ingredients": {
             "water": 50,
+            "milk": 0,
             "coffee": 18,
         },
         "cost": 1.5,
@@ -34,9 +35,10 @@ resources = {
 
 # Fraction of a dollar
 
-coins = {
-    "penny": 0.01,
-    "nickel": 0.05,
-    "dime": 0.10,
-    "quarter": 0.25,
+coins_amount = {
+    "pennies": [0.01, 0],
+    "nickels": [0.05, 0],
+    "dimes": [0.10, 0],
+    "quarters": [0.25, 0],
 }
+
