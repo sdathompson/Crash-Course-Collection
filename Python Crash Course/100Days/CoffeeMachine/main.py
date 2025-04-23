@@ -13,12 +13,3 @@
 #If insufficient resources, say which resource the machine is low on
 
 # TODO: Make the coffee.
-
-
-
-
-
-
-
-
-
