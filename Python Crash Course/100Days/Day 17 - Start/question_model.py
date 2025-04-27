@@ -3,8 +3,3 @@ class Question:
         self.text = q_text
         self.answer = q_answer
 
-    def evaluation(self):
-        if self.text == self.answer:
-            return True
-        else:
-            return False
