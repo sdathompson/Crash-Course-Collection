@@ -1,4 +1,5 @@
 import time
+import random
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
@@ -26,6 +27,7 @@ while game_is_on:
     time.sleep(0.1)
     screen.update()
 #TODO: Set up random car generation
+    if random.randint(1, 6) == 1: # The lower the range, the more frequent cars spawn
+        car_spawner.create_car()
+
     car_spawner.drive()
-    if car_spawner.xcor() <= 250:
-        car_spawner.new_loc_col()

@@ -17,3 +17,6 @@ class Player(Turtle):
     def go_forwards(self):
         turtle_crawl = self.ycor() + 10
         self.goto(x=self.xcor(), y=turtle_crawl)
+
+    def restart(self):
+        pass
