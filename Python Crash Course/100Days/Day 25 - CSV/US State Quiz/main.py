@@ -1,10 +1,14 @@
-import turtle
+from turtle import Screen, Turtle, TK
 import pandas
+from tkinter import messagebox
 from states import States
 
-#Instructions: run and type states in that you know
+# Instructions: run and type states in that you know
+# Once you don't know any more, type "Exit" to exit the program
+# A popup will show you what you missed
 
-screen = turtle.Screen()
+screen = Screen()
+turtle = Turtle()
 screen.title("U.S. States Game")
 image = "blank_states_img.gif"
 screen.addshape(image)
@@ -26,12 +30,14 @@ while len(statesClass.guessed_states) < 50:
 
         states_to_learn = pandas.DataFrame(statesClass.missing_states)
         states_to_learn.to_csv("states_to_learn.csv")
+        missed_states_data = pandas.read_csv("states_to_learn.csv")
+        TK.messagebox.showinfo(title="States that you missed", message=f"{missed_states_data}")
         break
     # If answer_state is one of the states in all the states
         #If they got it right:
     if answer_state in all_states:
         statesClass.guessed_states.add(answer_state)
-        t = turtle.Turtle()
+        t = Turtle()
         t.hideturtle()
         t.penup()
         # Select the row with the answer
