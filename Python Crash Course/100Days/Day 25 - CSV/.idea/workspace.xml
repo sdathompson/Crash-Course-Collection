@@ -5,22 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e93b9bac-34e1-4a32-8c48-85b9b824984a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Squirrel Data/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/US State Quiz/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day 24 - Read and Write/Mail Merge Project Start/.idea/Mail Merge Project Start.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 24 - Read and Write/Mail Merge Project Start/.idea/Mail Merge Project Start.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day 24 - Read and Write/Mail Merge Project Start/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 24 - Read and Write/Mail Merge Project Start/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/US State Quiz/screen_input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/US State Quiz/states.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/US State Quiz/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/US State Quiz/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2zv3G7zDAj6bKW7rQhsLTaqlHmB" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,8 +36,10 @@
   "keyToString": {
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true"
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
