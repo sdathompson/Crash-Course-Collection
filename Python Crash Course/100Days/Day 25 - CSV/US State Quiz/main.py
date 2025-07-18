@@ -17,18 +17,15 @@ turtle.shape(image)
 
 state_data = pandas.read_csv("50_states.csv")
 all_states = state_data.state.to_list()
-statesClass = States()
+sC = States()
 
 
-while len(statesClass.guessed_states) < 50:
+while len(sC.guessed_states) < 50:
 # Pop-up window that stores the user input into answer_state
-    answer_state = screen.textinput(title=f"{len(statesClass.guessed_states)}/50 states guessed", prompt="Guess a state name").title()
+    answer_state = screen.textinput(title=f"{len(sC.guessed_states)}/50 states guessed", prompt="Guess a state name").title()
     if answer_state == "Exit":
-        for state in all_states:
-            if state not in statesClass.guessed_states:
-                statesClass.missing_states.append(state)
-
-        states_to_learn = pandas.DataFrame(statesClass.missing_states)
+        missing_states = [state for state in all_states if state not in sC.guessed_states]
+        states_to_learn = pandas.DataFrame(missing_states)
         states_to_learn.to_csv("states_to_learn.csv")
         missed_states_data = pandas.read_csv("states_to_learn.csv")
         TK.messagebox.showinfo(title="States that you missed", message=f"{missed_states_data}")
@@ -36,7 +33,7 @@ while len(statesClass.guessed_states) < 50:
     # If answer_state is one of the states in all the states
         #If they got it right:
     if answer_state in all_states:
-        statesClass.guessed_states.add(answer_state)
+        sC.guessed_states.add(answer_state)
         t = Turtle()
         t.hideturtle()
         t.penup()
