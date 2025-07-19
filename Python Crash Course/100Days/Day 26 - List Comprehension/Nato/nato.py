@@ -1,31 +1,6 @@
+import pandas
 
 class Nato:
     def __init__(self):
-        self.nato_alphabet = {
-            'A': 'Alpha',
-            'B': 'Bravo',
-            'C': 'Charlie',
-            'D': 'Delta',
-            'E': 'Echo',
-            'F': 'Foxtrot',
-            'G': 'Golf',
-            'H': 'Hotel',
-            'I': 'India',
-            'J': 'Juliett',
-            'K': 'Kilo',
-            'L': 'Lima',
-            'M': 'Mike',
-            'N': 'November',
-            'O': 'Oscar',
-            'P': 'Papa',
-            'Q': 'Quebec',
-            'R': 'Romeo',
-            'S': 'Sierra',
-            'T': 'Tango',
-            'U': 'Uniform',
-            'V': 'Victor',
-            'W': 'Whiskey',
-            'X': 'X-ray',
-            'Y': 'Yankee',
-            'Z': 'Zulu'
-        }
+        self.nato_frame = pandas.read_csv("nato_phonetic_alphabet.csv")
+        self.nato_alphabet = {row.letter:row.code for (index, row) in self.nato_frame.iterrows()}

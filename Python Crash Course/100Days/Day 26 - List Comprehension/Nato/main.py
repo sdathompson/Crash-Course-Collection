@@ -1,4 +1,5 @@
-from Nato import Nato
+from nato import Nato
+
 def name_to_nato(times_run):
 
     if times_run == 0:

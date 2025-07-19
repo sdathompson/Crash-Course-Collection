@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e93b9bac-34e1-4a32-8c48-85b9b824984a" name="Changes" comment="" />
+    <list default="true" id="e93b9bac-34e1-4a32-8c48-85b9b824984a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/Lesson/dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/Nato/nato_phonetic_alphabet.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Day 27 - Tkinter/Lesson/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day 26 - List Comprehension/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day 26 - List Comprehension/Nato/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/Nato/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day 26 - List Comprehension/Nato/nato.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/Nato/nato.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day 26 - List Comprehension/nato/nato_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 26 - List Comprehension/nato/nato_log.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +39,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.dictionary.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Work/Crash Course Collection/Python Crash Course/100Days/Day 25 - CSV&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
 }</component>

@@ -5,21 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65422fda-8c98-40e8-a248-07f5734c3ee9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/US State Quiz.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson/numbers1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson/numbers2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lesson/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nato/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Nato/nato.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lesson/dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Nato/nato_phonetic_alphabet.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Day 27 - Tkinter/Lesson/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Day 25 - CSV/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 25 - CSV/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/states_to_learn.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Day 25 - CSV/US State Quiz/states_to_learn.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nato/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nato/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nato/nato.py" beforeDir="false" afterPath="$PROJECT_DIR$/Nato/nato.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nato/nato_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/nato/nato_log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="301CZje5VBOj0VXiJAPqJHULVjf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,16 +32,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.dictionary.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Work/Crash Course Collection/Python Crash Course/100Days/Day 25 - CSV"
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Work/Crash Course Collection/Python Crash Course/100Days/Day 27 - Tkinter"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Crash Course Collection\Python Crash Course\100Days\Day 26 - List Comprehension\nato" />
       <recent name="D:\Work\Crash Course Collection\Python Crash Course\100Days\Day 26 - List Comprehension\Lesson" />
+      <recent name="D:\Work\Crash Course Collection\Python Crash Course\100Days\Day 26 - List Comprehension" />
       <recent name="D:\Work\Crash Course Collection\Python Crash Course\100Days\Day 26 - List Comprehension\Nato" />
     </key>
   </component>
