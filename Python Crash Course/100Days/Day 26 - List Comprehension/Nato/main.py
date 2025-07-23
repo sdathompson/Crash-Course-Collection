@@ -1,4 +1,5 @@
 from nato import Nato
+import string
 
 def name_to_nato(times_run):
 
@@ -10,8 +11,12 @@ def name_to_nato(times_run):
     # Stop condition
     if times_run == 5:
         return
-
-    enter_name = str(input("Please enter your name: "))
+    try:
+        enter_name = str(input("Please enter your name: "))
+    except KeyError as e:
+        if e not in string.ascii_letters:
+            print(f"Sorry, {e} does not include letters from the alphabet")
+            enter_name = str(input("Please enter your name: "))
     nato_alpha = Nato()
     nato_list = [nato_alpha.nato_alphabet[letter.upper()] for letter in enter_name]
 
