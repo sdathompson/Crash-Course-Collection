@@ -46,17 +46,30 @@ def open_ko_window():
     flash_card_canvas.grid(columnspan=2, column=0, row=0)
 
     # What language we're using
-    ko_lbl = Label(text="Korean", font=("Ariel", 40, "italic"), bg="white")
-    ko_lbl.place(x=300, y=150)
+    ko_lbl = Label(flash_card_canvas, text="Korean", font=("Ariel", 40, "italic"), bg="white")
+    ko_lbl.place(relx=0.5, rely=0.30, anchor="center")
 
-    # Select a random row
-    ko_row = random.randint(0, ko_df_selected.shape[0])
-    # Use .iat to find the exact row and column
-    random_ko = ko_df_selected.iat[ko_row, 0]
-    ko_wrd = Label(text=f"{random_ko}", font=("Ariel", 60, "bold"), bg="white")
-    ko_wrd.place(x=300, y=263)
+    # Create the word outside of the function to ensure one label is created
+    ko_wrd = Label(flash_card_canvas,text="", font=("Ariel", 60, "bold"), bg="white")
+    ko_wrd.place(relx=0.5, rely=0.60, anchor="center")
+
+    def rand_ko_wrd():
+        # Select a random row
+        ko_row = random.randint(0, ko_df_selected.shape[0] - 1)
+        # Use .iat to find the exact row and column
+        random_ko = ko_df_selected.iat[ko_row, 0]
+        ko_wrd.config(text="")
+        ko_wrd.config(text=f"{random_ko}")
+    rand_ko_wrd()
 
     # Buttons
+    cross_img = PhotoImage(file="./Images/wrong.png")
+    cross_button = Button(image=cross_img, highlightthickness=0, command=rand_ko_wrd)
+    cross_button.grid(column=0, row=1)
+
+    check_img = PhotoImage(file="./Images/right.png")
+    check_button = Button(image=check_img, highlightthickness=-0, command=rand_ko_wrd)
+    check_button.grid(column=1, row=1)
 
     ko_window.mainloop()
 
