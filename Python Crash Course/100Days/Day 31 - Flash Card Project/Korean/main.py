@@ -27,8 +27,7 @@ ko_df_selected = ko_df[['Korean', 'Ko to En']]
 
 ja_pandas = pandas.read_csv("./Korean - Japanese - English Flash Cards - Japenese.csv")
 ja_df = pandas.DataFrame(ja_pandas)
-ja_df_selected = ja_df[['Japanese', 'Ja to En'
-                                    '']]
+ja_df_selected = ja_df[['Japanese', 'Ja to En']]
 
 
 
