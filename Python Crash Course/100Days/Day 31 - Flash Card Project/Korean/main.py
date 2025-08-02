@@ -1,6 +1,11 @@
 import pandas
 import random
 from tkinter import *
+from gtts import gTTS
+import pygame
+import time
+import os
+import threading
 
 GREEN = "#A8D5C5"
 PINK = "#D57E7E"
@@ -39,6 +44,7 @@ def open_ko_window():
     ko_window.title("Learn Korean!")
     ko_window.config(padx=50, pady=50, bg=GREEN)
 
+
     # Front Image
     flash_card_img = PhotoImage(file="./Images/card_front.png")
     flash_card_canvas = Canvas(ko_window, bg=GREEN, width=800, height=526, highlightthickness=0)
@@ -53,6 +59,44 @@ def open_ko_window():
     ko_wrd = Label(flash_card_canvas,text="", font=("Ariel", 60, "bold"), bg="white")
     ko_wrd.place(relx=0.5, rely=0.60, anchor="center")
 
+    # Google TTS
+    def speak_ko(text):
+        temp_path = os.path.join(os.getenv("TEMP"), "korean_temp.mp3")
+
+        # Stop playback if already playing
+        if pygame.mixer.get_init():
+            pygame.mixer.music.stop()
+
+            # Wait until file is released
+            while pygame.mixer.music.get_busy():
+                time.sleep(0.1)
+
+        # Try deleting the existing file
+        if os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except PermissionError:
+                print("Still locked... waiting for release")
+                time.sleep(0.5)
+                os.remove(temp_path)  # Try again
+
+        # Create and save new TTS file
+        tts = gTTS(text=text, lang='ko')
+        tts.save(temp_path)
+
+        pygame.mixer.init()
+        pygame.mixer.music.load(temp_path)
+        pygame.mixer.music.play()
+
+        def cleanup_temp_file(path):
+            time.sleep(2)  # Wait until playback likely finishes
+            try:
+                os.remove(path)
+            except PermissionError:
+                pass  # Or retry later
+
+        threading.Thread(target=cleanup_temp_file, args=(temp_path,), daemon=True).start()
+
     def rand_ko_wrd():
         # Select a random row
         ko_row = random.randint(0, ko_df_selected.shape[0] - 1)
@@ -60,6 +104,7 @@ def open_ko_window():
         random_ko = ko_df_selected.iat[ko_row, 0]
         ko_wrd.config(text="")
         ko_wrd.config(text=f"{random_ko}")
+        speak_ko(f"{random_ko}")
     rand_ko_wrd()
 
     # Buttons
