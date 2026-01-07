@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 OPR/125.0.0.0" version="29.2.10">
   <diagram name="Page-1" id="hJvG8tTQQqoM-I3nhShb">
-    <mxGraphModel dx="2890" dy="2418" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2307" dy="2041" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="eFjIOiAiyyJ5dxw15wIJ-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;opacity=10;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;labelBackgroundColor=none;" value="]" vertex="1">
+        <mxCell id="eFjIOiAiyyJ5dxw15wIJ-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;opacity=10;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;labelBackgroundColor=none;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" value="]" vertex="1">
           <mxGeometry height="1350" width="3220" x="-510" y="2020" as="geometry" />
         </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-80" parent="1" style="rounded=0;whiteSpace=wrap;html=1;opacity=10;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;labelBackgroundColor=none;" value="]" vertex="1">
@@ -240,14 +240,11 @@
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-97" parent="eFjIOiAiyyJ5dxw15wIJ-95" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Voiceline - F Voice Lines" vertex="1">
           <mxGeometry height="22.5" width="160" x="25" y="68.75" as="geometry" />
         </mxCell>
-        <mxCell id="eFjIOiAiyyJ5dxw15wIJ-98" parent="eFjIOiAiyyJ5dxw15wIJ-95" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Speaker - Name" vertex="1">
-          <mxGeometry height="22.5" width="160" x="25" y="100" as="geometry" />
-        </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-109" parent="eFjIOiAiyyJ5dxw15wIJ-95" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Player Line ID - String" vertex="1">
-          <mxGeometry height="22.5" width="160" x="25" y="130.6300000000001" as="geometry" />
+          <mxGeometry height="22.5" width="160" x="25" y="103.63000000000011" as="geometry" />
         </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-156" parent="eFjIOiAiyyJ5dxw15wIJ-95" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="IsEndConvo - Bool" vertex="1">
-          <mxGeometry height="22.5" width="160" x="25" y="153.1300000000001" as="geometry" />
+          <mxGeometry height="22.5" width="160" x="25" y="135.1300000000001" as="geometry" />
         </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-114" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#6F0000;fillColor=#a20025;align=center;verticalAlign=middle;rounded=0;fontColor=#ffffff;" value="&lt;span style=&quot;font-size: 48px;&quot;&gt;Proposed Solution&lt;/span&gt;" vertex="1">
           <mxGeometry height="140" width="320" x="1025" y="1790" as="geometry" />
@@ -321,9 +318,6 @@
         </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-144" parent="eFjIOiAiyyJ5dxw15wIJ-142" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Animation - AnimMontage" vertex="1">
           <mxGeometry height="22.5" width="160" x="20" y="53.75" as="geometry" />
-        </mxCell>
-        <mxCell id="eFjIOiAiyyJ5dxw15wIJ-145" parent="eFjIOiAiyyJ5dxw15wIJ-140" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Speaker - Name" vertex="1">
-          <mxGeometry height="22.5" width="160" x="20" y="146.75" as="geometry" />
         </mxCell>
         <mxCell id="eFjIOiAiyyJ5dxw15wIJ-146" parent="eFjIOiAiyyJ5dxw15wIJ-140" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Player Line ID - String" vertex="1">
           <mxGeometry height="22.5" width="160" x="20" y="171.25" as="geometry" />
