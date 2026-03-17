@@ -1,0 +1,7 @@
+Question, Answer
+What are Foundation Models (FMs) in the context of AI?, Foundation Models (FMs) are large-scale pre-trained AI models that can be adapted to a wide range of tasks.
+What is Amazon Bedrock?, Amazon Bedrock is an AWS service that helps customers manage their serverless applications and infrastructure.
+What are common integration patterns in software architecture?, Common integration patterns include Service-Oriented Architecture (SOA) Event-Driven Architecture (EDA) and Microservices Architecture.
+What is the AWS Well-Architected Framework?, The AWS Well-Architectured Framework is a set of best practices for designing and operating realiable secure efficient and cost effective systems on AWS.
+Name a common deployment strategy used in software development, A common deployment strategy is blue/green deployment where two identical environments are used to switch between versions.
+What is the AWS Well-Architected Tool (WA Tool) - Generative AI Lens?, The AWS Well-Architected Tool (WA Tool) - Generative AI Lens offers guidance and best practices for building and deploying generative AI applications on AWS.
