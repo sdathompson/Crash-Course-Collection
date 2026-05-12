@@ -6,11 +6,16 @@ import pygame
 import time
 import os
 import threading
+from flashcard_window import FlashCardWindow
+from language_config import LanguageConfig
+from menu_window import MenuWindow
 
 GREEN = "#A8D5C5"
 PINK = "#D57E7E"
 BLUE = "#A2CDCD"
 BEIGE = "#FFE1AF"
+
+
 
 # Flash Card Program - Time to learn Korean
 
@@ -26,134 +31,28 @@ BEIGE = "#FFE1AF"
 # ko_to_csv = pandas.read_csv("D:/Work/Crash Course Collection/Python Crash Course/100Days/Day 31 - Flash Card Project/ko_50k.txt", sep=' ')
 # ko_to_csv.to_csv('output_ko.csv', index=False)
 
-ko_pandas = pandas.read_csv("./Korean - Japanese - English Flash Cards - Korean.csv")
-ko_df = pandas.DataFrame(ko_pandas)
-ko_df_selected = ko_df[['Korean', 'Ko to En']]
+LANGUAGES = [
+    LanguageConfig(
+        display_name="Korean",
+        lang_code="ko",
+        bg_color=GREEN,
+        flipped_bg_color=PINK,
+        csv_path="./Korean - Japanese - English Flash Cards - Korean.csv",
+        word_col="Korean",
+        translation_col="Ko to En",
+        temp_filename="korean_temp.mp3"
+    ),
+    LanguageConfig(
+        display_name="Japanese",
+        lang_code="ja",
+        bg_color=BLUE,
+        flipped_bg_color=BEIGE,
+        csv_path="./Korean - Japanese - English Flash Cards - Japenese.csv",
+        word_col="Japanese",
+        translation_col="Ja to En",
+        temp_filename="japanese_temp.mp3"
+    ),
+]
 
-ja_pandas = pandas.read_csv("./Korean - Japanese - English Flash Cards - Japenese.csv")
-ja_df = pandas.DataFrame(ja_pandas)
-ja_df_selected = ja_df[['Japanese', 'Ja to En']]
-
-
-
-
-def open_ko_window():
-    root_menu.destroy()
-
-    ko_window = Tk()
-    ko_window.title("Learn Korean!")
-    ko_window.config(padx=50, pady=50, bg=GREEN)
-
-
-    # Front Image
-    flash_card_img = PhotoImage(file="./Images/card_front.png")
-    flash_card_canvas = Canvas(ko_window, bg=GREEN, width=800, height=526, highlightthickness=0)
-    flash_card_canvas.create_image(400, 263, image=flash_card_img)
-    flash_card_canvas.grid(columnspan=2, column=0, row=0)
-
-    # What language we're using
-    ko_lbl = Label(flash_card_canvas, text="Korean", font=("Ariel", 40, "italic"), bg="white")
-    ko_lbl.place(relx=0.5, rely=0.30, anchor="center")
-
-    # Create the word outside of the function to ensure one label is created
-    ko_wrd = Label(flash_card_canvas,text="", font=("Ariel", 60, "bold"), bg="white")
-    ko_wrd.place(relx=0.5, rely=0.60, anchor="center")
-
-    # Google TTS
-    def speak_ko(text):
-        temp_path = os.path.join(os.getenv("TEMP"), "korean_temp.mp3")
-
-        # Stop playback if already playing
-        if pygame.mixer.get_init():
-            pygame.mixer.music.stop()
-
-            # Wait until file is released
-            while pygame.mixer.music.get_busy():
-                time.sleep(0.1)
-
-        # Try deleting the existing file
-        if os.path.exists(temp_path):
-            try:
-                os.remove(temp_path)
-            except PermissionError:
-                print("Still locked... waiting for release")
-                time.sleep(0.5)
-                os.remove(temp_path)  # Try again
-
-        # Create and save new TTS file
-        tts = gTTS(text=text, lang='ko')
-        tts.save(temp_path)
-
-        pygame.mixer.init()
-        pygame.mixer.music.load(temp_path)
-        pygame.mixer.music.play()
-
-        def cleanup_temp_file(path):
-            time.sleep(2)  # Wait until playback likely finishes
-            try:
-                os.remove(path)
-            except PermissionError:
-                pass  # Or retry later
-
-        threading.Thread(target=cleanup_temp_file, args=(temp_path,), daemon=True).start()
-
-    def rand_ko_wrd():
-        # Select a random row
-        ko_row = random.randint(0, ko_df_selected.shape[0] - 1)
-        # Use .iat to find the exact row and column
-        random_ko = ko_df_selected.iat[ko_row, 0]
-        ko_wrd.config(text="")
-        ko_wrd.config(text=f"{random_ko}")
-        speak_ko(f"{random_ko}")
-    rand_ko_wrd()
-
-    # Buttons
-    cross_img = PhotoImage(file="./Images/wrong.png")
-    cross_button = Button(image=cross_img, highlightthickness=0, command=rand_ko_wrd)
-    cross_button.grid(column=0, row=1)
-
-    check_img = PhotoImage(file="./Images/right.png")
-    check_button = Button(image=check_img, highlightthickness=-0, command=rand_ko_wrd)
-    check_button.grid(column=1, row=1)
-
-    ko_window.mainloop()
-
-
-def open_ja_window():
-    root_menu.destroy()
-
-    ja_window = Tk()
-    ja_window.title("Learn Japanese!")
-
-
-    ja_window.mainloop()
-
-
-root_menu = Tk()
-root_menu.title("Choose a language")
-
-init = Label(text="")
-init.grid(column=0, row=0)
-
-ko_char_img = PhotoImage(file="./Images/Person.png")
-ko_char_label = Label(root_menu, image=ko_char_img)
-ko_char_label.grid(column=1, row=0)
-
-main_label = Label(text="What language do you want to learn?", font=("Segoe UI", 24, "bold"), justify="center",pady=10, padx=10)
-main_label.grid(column=1, row=1)
-
-hangul_img = PhotoImage(file="./Images/Hangul.png")
-hangul_label = Label(root_menu, image=hangul_img)
-hangul_label.grid(column=1, row=2, sticky="w")
-
-ko_button = Button(root_menu, text="Korean", padx=10, command=open_ko_window)
-ko_button.grid(column=1, row=3, sticky="w")
-
-kanji_img = PhotoImage(file="./Images/Kanji.png")
-kanji_label = Label(root_menu, image=kanji_img)
-kanji_label.grid(column=1, row=2, sticky="e")
-
-ja_button = Button(root_menu, text="Japanese", padx=10, command=open_ja_window)
-ja_button.grid(column=1, row=3, sticky="e")
-
-root_menu.mainloop()
+if __name__ == "__main__":
+    MenuWindow(languages=LANGUAGES).run()
