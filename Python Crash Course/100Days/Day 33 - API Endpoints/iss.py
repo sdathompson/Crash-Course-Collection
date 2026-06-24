@@ -2,7 +2,8 @@ import requests
 from datetime import datetime
 import time
 from APi import ApiCall as aPI
-from sender import SmtpEmails as sEND
+from sen3
+der import SmtpEmails as sEND
 
 MY_LAT = 43.898750
 MY_LNG = -79.448396
